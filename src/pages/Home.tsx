@@ -10,6 +10,11 @@ class Home extends React.Component {
                         info about us
                     </Link>
                 </button>
+                <button type="button">how to contact us
+                    <Link to={'/contact-us'}> 
+                        how to contact us
+                    </Link>
+                </button>
             </>
         )
     }
