@@ -1,0 +1,12 @@
+.home-button-info {
+    padding: 15px;
+    border-radius: 1px solid transparent;
+    border-radius: 8px;
+    background-color: aquamarine;
+}
+
+.home-button-info > * {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}

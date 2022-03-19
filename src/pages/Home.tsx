@@ -1,22 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
+import {
+    HomeButtonInfo, 
+    Container, 
+    Row,
+} from '../styles/Home';
 
-class Home extends React.Component {
-    render () {
+interface Istate {
+    ctr: number;
+}
+
+class Home extends React.Component<RouteComponentProps, Istate>{
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            ctr: 0,
+        }
+    }
+
+    public handleClickBtn = () => {
+        // this.props.history.push('/about-us')
+        this.setState({ctr: this.state.ctr + 1 });
+    }
+
+    render() {
+        const isEven = this.state.ctr % 2 === 0; //true atau false
         return (
-            <>
-                <h1>Home</h1>
-                <button type="button">info about us
-                    <Link to={'/about-us'}> 
-                        info about us
-                    </Link>
-                </button>
-                <button type="button">how to contact us
-                    <Link to={'/contact-us'}> 
-                        how to contact us
-                    </Link>
-                </button>
-            </>
+            <Container>
+                <Row>
+                    <h1>Home</h1>
+                    <HomeButtonInfo
+                        isEven={isEven}
+                        onClick={this.handleClickBtn}
+                    >
+                        About-us
+                    </HomeButtonInfo>
+                </Row>
+            </Container>
         )
     }
 }
