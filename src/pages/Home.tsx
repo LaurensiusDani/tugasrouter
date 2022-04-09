@@ -23,7 +23,7 @@ class Home extends React.Component<RouteComponentProps, Istate>{
         // this.props.history.push('/about-us')
         this.setState({ctr: this.state.ctr + 1 });
     }
-
+    
     render() {
         const isEven = this.state.ctr % 2 === 0; //true atau false
         return (
